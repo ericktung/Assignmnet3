@@ -1,0 +1,113 @@
+<!DOCTYPEhtml><head>
+<title> Dragon land</title>
+
+
+<script src="jquery-1.11.2.min.js"></script>
+<script src="tracery.min.js"></script>
+<script src="input_output.js"></script>
+<script src="grammar.js"></script>
+<script src="mog.js"></script>
+
+<style>
+
+.counter {
+  display: inline-block;
+  width:100px;
+  
+  span {
+    display: inline-block;
+  }
+}
+image{
+    display: inline-block
+    width: 50%;
+  }
+
+#mouth_display{
+  background-color: gray;
+
+  height: 100vh;
+  width: 100vw;
+
+  }
+  
+#eclipse  {
+  z-level: 5;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+}
+
+</style>
+
+
+
+</head>
+<body>
+
+<a href="mog.html">Dragon land</a>
+
+
+
+
+
+<hr>
+
+<pre>
+needs inputs: 
+Attacker Skill Attacker, Agression, Dragon Strength, Dragon Skill, Dragon Agression ,Dragon Strength ,River ,Forts 
+function needs to redraw the whole display updating the relevent game data
+
+
+</pre>
+
+<br> 
+
+
+<div id="mouth_display">
+
+<div id="eclipse"style="visibility:hidden">  <span style="width: 100%; color: #ffffff; font-size: 50px; text-align: center"> ECLIPSE TRIGGERED </span> <hr><image src="eclips.jpg" style="width: 50%; margin: auto"/> </div> 
+
+
+<div id="soldier" class="counter">
+  <span id="soldiercount">0</span>
+  <img src="dragonight.png" style="width: 100px; height: 100px;">
+</div>
+<div id="dead" class="counter">
+  <span id="deadcount">0</span>
+  <img src="death-skull.svg" style="width: 100px; height: 100px;">
+</div>
+
+
+<div id="battle_report"> </div>
+
+<br> <br> 
+<div id="form">
+  <div class="left" style="display: inline-block; float: left; width: 40%">
+    <label> Attacker Skill <input type="number" id="a_skill"> </label><br>
+    <label> Attacker Agression <input type="number" id="a_agg"> </label><br>
+    <label> Dragon Strength <input type="number" id="a_sold"> </label>
+</div>
+
+<div class="right" style="display: inline-block; float: right; width: 40%">
+    <label> Dragon Skill <input type="number" id="d_skill"> </label><br>
+    <label> Dragon Agression <input type="number" id="d_agg"> </label><br>
+    <label> Dragon Strength <input type="number" id="d_sold" /> </label><br>
+    <label> River <input type="checkbox" id="river"/> </label><br>
+    <label> Forts <input type="number" id="forts"/> </label>
+</div>
+
+
+<button onclick="run_battle_sim(game_state);"> Run Battle </button>
+<button onclick="next_round(game_state);"> Next Round </button>
+
+
+</div> 
+
+<script>
+render_game_state(game_state)
+</script>
+
+</body>
+</html>
